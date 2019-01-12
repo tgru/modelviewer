@@ -1,0 +1,15 @@
+{
+    "name": "Model Viewer",
+    "description": "View your 3D models from within Nextcloud.",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "tgru"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
