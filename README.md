@@ -1,6 +1,20 @@
 # Model Viewer
 Place this app in **nextcloud/apps/**
 
+## Features
+
+This project is currently in planning phase and so there are no features implemented yet.
+
+Here are some planned features:
+
+- [ ] Render the 3D model in an modal window after opening it in the files app
+- [ ] Zooming, panning and rotating the model
+- [ ] Different views (Solid/Wireframe view)
+- [ ] Fullscreen mode
+- [ ] Support for various 3D formats, but  at least `stl` and `obj`
+- [ ] Generate thumbnails for the models
+- [ ] Work on mobile
+
 ## Building the app
 
 The app can be built by using the provided Makefile by running:
