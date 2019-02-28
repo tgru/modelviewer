@@ -38,6 +38,15 @@ The make command will install or update Composer dependencies if a composer.json
     "build": "node node_modules/gulp-cli/bin/gulp.js"
 }
 ```
+## Server Side Adjustments
+
+At the moment of writing Nextcloud does not support opening `*.stl` files, so `/nextcloud/config/mimetypemapping.json` must be created or extended. Here is an example file:
+
+```json
+{
+	"stl": ["model/stl"]
+}
+```
 
 ## Running tests
 You can use the provided Makefile to run all tests by using:
