@@ -1,3 +1,3 @@
 <?php
 
-OCP\Util::addscript( 'modelviewer', 'script');
+OCP\Util::addscript( 'modelviewer', 'modelviewer');
