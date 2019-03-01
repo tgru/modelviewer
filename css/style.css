@@ -33,3 +33,9 @@
 
 	cursor: pointer;
 }
+
+#modelviewer-button{
+	width: 24px;
+	height: 24px;
+	float: right;
+}

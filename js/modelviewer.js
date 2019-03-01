@@ -8,6 +8,13 @@ var modelViewer = {
         modelViewer.window = document.createElement('div')
         modelViewer.window.setAttribute('id', 'modelviewer-window')
 
+        exitButton = document.createElement('button')
+        exitButton.setAttribute('id', 'modelviewer-button')
+        exitButton.classList.add("icon-close")
+        exitButton.addEventListener("click", modelViewer.hide)
+
+        modelViewer.window.appendChild(exitButton)
+
         modelViewer.overlay = document.createElement('div')
         modelViewer.overlay.setAttribute('id', 'modelviewer-overlay')
 
