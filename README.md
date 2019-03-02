@@ -1,5 +1,6 @@
 # Model Viewer
-Place this app in **nextcloud/apps/**
+
+An 3D model viewer for Nextcloud.
 
 ## Features
 
