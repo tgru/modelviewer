@@ -4,6 +4,7 @@ var modelViewer = {
     ],
     overlay: null,
     window: null,
+    container: null,
     setup: function () {
         modelViewer.window = document.createElement('div')
         modelViewer.window.setAttribute('id', 'modelviewer-window')
@@ -12,8 +13,11 @@ var modelViewer = {
         exitButton.setAttribute('id', 'modelviewer-button')
         exitButton.classList.add("icon-close")
         exitButton.addEventListener("click", modelViewer.hide)
-
         modelViewer.window.appendChild(exitButton)
+
+        modelViewer.container = document.createElement('div')
+        modelViewer.container.setAttribute('id', 'modelviewer-container')
+        modelViewer.window.appendChild(modelViewer.container)
 
         modelViewer.overlay = document.createElement('div')
         modelViewer.overlay.setAttribute('id', 'modelviewer-overlay')
