@@ -12,7 +12,5 @@ class ModelRenderer {
     getCanvas() {}
 
     // resize canvas
-    resize(width, height) {
-
-    }
+    resize(width, height) {}
 }
