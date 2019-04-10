@@ -28,6 +28,9 @@ var modelViewer = {
         modelViewer.overlay.addEventListener("click", modelViewer.hide)
     },
     show: function (file, data) {
+        if( document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay))
+            return
+
         document.body.appendChild(modelViewer.overlay)
         document.body.appendChild(modelViewer.window)
 
@@ -40,6 +43,9 @@ var modelViewer = {
         modelViewer.renderer.load("")
     },
     hide: function () {
+        if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
+            return
+
         modelViewer.container.removeChild(modelViewer.renderer.getCanvas())
         modelViewer.renderer.destroy()
         document.body.removeChild(modelViewer.overlay)
