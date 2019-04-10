@@ -36,7 +36,6 @@ var modelViewer = {
 
         let w = modelViewer.container.offsetWidth
         let h = modelViewer.container.offsetHeight
-        console.log(w + 'x' + h)
         modelViewer.renderer = new STLRenderer(w, h)
 
         modelViewer.container.appendChild(modelViewer.renderer.getCanvas())
