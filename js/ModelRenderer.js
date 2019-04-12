@@ -1,4 +1,4 @@
-module.exports = class ModelRenderer {
+export class ModelRenderer {
     // build scene and canvas with given size
     constructor(width, height) {}
 
