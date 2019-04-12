@@ -1,4 +1,4 @@
-var STLRenderer = require('./STLRenderer')
+import {STLRenderer} from './STLRenderer'
 
 var modelViewer = {
     mimeTypes: [

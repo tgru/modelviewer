@@ -1,7 +1,7 @@
-var ModelRenderer = require('./ModelRenderer')
-var THREE = require('three')
+import {ModelRenderer} from './ModelRenderer'
+import * as THREE from 'three'
 
-module.exports = class STLRenderer extends ModelRenderer {
+export class STLRenderer extends ModelRenderer {
     id = 0
     canvas = null
 
