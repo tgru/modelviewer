@@ -39,7 +39,9 @@ var modelViewer = {
         modelViewer.renderer = new STLRenderer(w, h)
 
         modelViewer.container.appendChild(modelViewer.renderer.getCanvas())
-        modelViewer.renderer.load("")
+
+        let path = data.fileList.getDownloadUrl(file, data.dir)
+        modelViewer.renderer.load(path)
     },
     hide: function () {
         if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
