@@ -46,6 +46,8 @@ var modelViewer = {
 
         let path = data.fileList.getDownloadUrl(file, data.dir)
         modelViewer.renderer.load(path)
+
+        document.getElementById('modelviewer-filename').innerHTML = file
     },
     hide: function () {
         if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
