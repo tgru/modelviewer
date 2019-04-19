@@ -62,3 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
         OCA.Files.fileActions.setDefault(modelViewer.mimeTypes[i], 'Show')
     }
 })
+
+window.addEventListener("resize", function () {
+    let width = document.getElementById('modelviewer-container').clientWidth
+    let height = document.getElementById('modelviewer-container').clientHeight
+    modelViewer.renderer.resize(width, height)
+})
