@@ -18,6 +18,10 @@ var modelViewer = {
         exitButton.addEventListener("click", modelViewer.hide)
         modelViewer.window.appendChild(exitButton)
 
+        var filename = document.createElement('div')
+        filename.setAttribute('id', 'modelviewer-filename')
+        modelViewer.window.appendChild(filename)
+
         modelViewer.container = document.createElement('div')
         modelViewer.container.setAttribute('id', 'modelviewer-container')
         modelViewer.window.appendChild(modelViewer.container)
