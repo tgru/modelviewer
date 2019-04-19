@@ -15,6 +15,7 @@ Here is a rough todo list:
 - [ ] Panning the model
 - [ ] Rotating the model
 - [ ] Solid view
+- [x] Normal view
 - [ ] Wireframe view
 - [ ] Fullscreen mode
 - [ ] Generating thumbnails for models
