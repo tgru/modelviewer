@@ -1,5 +1,7 @@
 import {ModelRenderer} from './ModelRenderer'
 import * as THREE from 'three'
+import three_stl_loader from 'three-stl-loader'
+const STLLoader = three_stl_loader(THREE)
 
 export class STLRenderer extends ModelRenderer {
     id = 0
@@ -34,13 +36,16 @@ export class STLRenderer extends ModelRenderer {
     }
 
     load(path) {
-        let geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 )
-        let material = new THREE.MeshNormalMaterial()
-
-        this.mesh = new THREE.Mesh( geometry, material )
-        this.scene.add( this.mesh )
-
-        this.animate()
+        let loader = new STLLoader()
+        loader.load(path, geometry => {
+            console.log(geometry)
+            let mat = new THREE.MeshNormalMaterial()
+            this.mesh = new THREE.Mesh(geometry, mat)
+            this.mesh.rotation.x = -0.5 * Math.PI
+            this.mesh.scale.set(0.01, 0.01, 0.01)
+            this.scene.add(this.mesh)
+            this.animate()
+        })
     }
 
     destroy() {
