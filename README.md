@@ -9,11 +9,15 @@ This project is currently under development so there are not all features implem
 Here is a rough todo list:
 
 - [x] Rendering the 3D model in an modal window at opening it in the files app
-- [ ] Zooming, panning and rotating the model
-- [ ] Different views (Solid/Wireframe view)
+- [x] `stl` support
+- [ ] `obj` support
+- [ ] Zooming the model
+- [ ] Panning the model
+- [ ] Rotating the model
+- [ ] Solid view
+- [ ] Wireframe view
 - [ ] Fullscreen mode
-- [ ] Support for various 3D formats, but  at least `stl` and `obj`
-- [ ] Generate thumbnails for the models
+- [ ] Generating thumbnails for models
 - [ ] Work on mobile
 
 ## Building the app
