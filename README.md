@@ -4,11 +4,11 @@ An 3D model viewer for Nextcloud.
 
 ## Features
 
-This project is currently in planning phase and so there are no features implemented yet.
+This project is currently under development so there are not all features implemented yet.
 
-Here are some planned features:
+Here is a rough todo list:
 
-- [ ] Render the 3D model in an modal window after opening it in the files app
+- [x] Rendering the 3D model in an modal window at opening it in the files app
 - [ ] Zooming, panning and rotating the model
 - [ ] Different views (Solid/Wireframe view)
 - [ ] Fullscreen mode
