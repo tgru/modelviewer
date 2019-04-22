@@ -21,18 +21,5 @@ At the moment of writing Nextcloud does not support opening `*.stl` files, so `/
 ```
 
 ## Running tests
-You can use the provided Makefile to run all tests by using:
 
-    make test
-
-This will run the PHP unit and integration tests and if a package.json is present in the **js/** folder will execute **npm run test**
-
-Of course you can also install [PHPUnit](http://phpunit.de/getting-started.html) and use the configurations directly:
-
-    phpunit -c phpunit.xml
-
-or:
-
-    phpunit -c phpunit.integration.xml
-
-for integration tests
+You can run the javascript tests by calling `npm run test` from within the `js` directory.
