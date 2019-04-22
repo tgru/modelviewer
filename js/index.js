@@ -11,16 +11,20 @@ var modelViewer = {
     setup: function () {
         modelViewer.window = document.createElement('div')
         modelViewer.window.setAttribute('id', 'modelviewer-window')
+        
+        var header = document.createElement('div')
+        header.setAttribute('id', 'modelviewer-header')
+        modelViewer.window.appendChild(header)
 
         var exitButton = document.createElement('button')
         exitButton.setAttribute('id', 'modelviewer-button')
         exitButton.classList.add("icon-close")
         exitButton.addEventListener("click", modelViewer.hide)
-        modelViewer.window.appendChild(exitButton)
+        header.appendChild(exitButton)
 
         var filename = document.createElement('div')
         filename.setAttribute('id', 'modelviewer-filename')
-        modelViewer.window.appendChild(filename)
+        header.appendChild(filename)
 
         modelViewer.container = document.createElement('div')
         modelViewer.container.setAttribute('id', 'modelviewer-container')
