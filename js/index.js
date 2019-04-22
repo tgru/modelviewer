@@ -63,7 +63,7 @@ var modelViewer = {
         document.body.removeChild(modelViewer.window)
     },
     setTitle(title) {
-        document.getElementById('modelviewer-title').innerHTML = title
+        document.getElementById('modelviewer-title').textContent = title
     }
 }
 
