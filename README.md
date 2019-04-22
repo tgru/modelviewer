@@ -2,24 +2,9 @@
 
 An 3D model viewer for Nextcloud.
 
-## Features
+## Description
 
-This project is currently under development so there are not all features implemented yet.
-
-Here is a rough todo list:
-
-- [x] Rendering the 3D model in an modal window at opening it in the files app
-- [x] `stl` support
-- [ ] `obj` support
-- [ ] Zooming the model
-- [ ] Panning the model
-- [ ] Rotating the model
-- [ ] Solid view
-- [x] Normal view
-- [ ] Wireframe view
-- [ ] Fullscreen mode
-- [ ] Generating thumbnails for models
-- [ ] Work on mobile
+This App enables your Nextcloud instance to render 3d models from within the files app. The Project is currently under development so there are not all features implemented yet. A Roadmap can be found in the [wiki](https://github.com/tgru/modelviewer/wiki/Roadmap).
 
 ## Building the app
 
