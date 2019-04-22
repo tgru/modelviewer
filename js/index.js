@@ -51,7 +51,7 @@ var modelViewer = {
         let path = data.fileList.getDownloadUrl(file, data.dir)
         modelViewer.renderer.load(path)
 
-        document.getElementById('modelviewer-title').innerHTML = file
+        modelViewer.setTitle(file)
     },
     hide: function () {
         if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
@@ -61,6 +61,9 @@ var modelViewer = {
         modelViewer.renderer.destroy()
         document.body.removeChild(modelViewer.overlay)
         document.body.removeChild(modelViewer.window)
+    },
+    setTitle(title) {
+        document.getElementById('modelviewer-title').innerHTML = title
     }
 }
 
