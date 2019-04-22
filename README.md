@@ -1,6 +1,6 @@
 # Model Viewer
 
-An 3D model viewer for Nextcloud.
+An 3D model viewer for Nextcloud based on [three.js](https://threejs.org/).
 
 ## Description
 
