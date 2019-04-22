@@ -22,9 +22,9 @@ var modelViewer = {
         exitButton.addEventListener("click", modelViewer.hide)
         header.appendChild(exitButton)
 
-        var filename = document.createElement('div')
-        filename.setAttribute('id', 'modelviewer-filename')
-        header.appendChild(filename)
+        var title = document.createElement('div')
+        title.setAttribute('id', 'modelviewer-title')
+        header.appendChild(title)
 
         modelViewer.container = document.createElement('div')
         modelViewer.container.setAttribute('id', 'modelviewer-container')
@@ -51,7 +51,7 @@ var modelViewer = {
         let path = data.fileList.getDownloadUrl(file, data.dir)
         modelViewer.renderer.load(path)
 
-        document.getElementById('modelviewer-filename').innerHTML = file
+        document.getElementById('modelviewer-title').innerHTML = file
     },
     hide: function () {
         if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
