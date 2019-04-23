@@ -11,12 +11,20 @@ var modelViewer = {
     setup: function () {
         modelViewer.window = document.createElement('div')
         modelViewer.window.setAttribute('id', 'modelviewer-window')
+        
+        var header = document.createElement('div')
+        header.setAttribute('id', 'modelviewer-header')
+        modelViewer.window.appendChild(header)
 
         var exitButton = document.createElement('button')
         exitButton.setAttribute('id', 'modelviewer-button')
         exitButton.classList.add("icon-close")
         exitButton.addEventListener("click", modelViewer.hide)
-        modelViewer.window.appendChild(exitButton)
+        header.appendChild(exitButton)
+
+        var title = document.createElement('div')
+        title.setAttribute('id', 'modelviewer-title')
+        header.appendChild(title)
 
         modelViewer.container = document.createElement('div')
         modelViewer.container.setAttribute('id', 'modelviewer-container')
@@ -42,6 +50,8 @@ var modelViewer = {
 
         let path = data.fileList.getDownloadUrl(file, data.dir)
         modelViewer.renderer.load(path)
+
+        modelViewer.setTitle(file)
     },
     hide: function () {
         if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
@@ -51,6 +61,9 @@ var modelViewer = {
         modelViewer.renderer.destroy()
         document.body.removeChild(modelViewer.overlay)
         document.body.removeChild(modelViewer.window)
+    },
+    setTitle(title) {
+        document.getElementById('modelviewer-title').textContent = title
     }
 }
 
