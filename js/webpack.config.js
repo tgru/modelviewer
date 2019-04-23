@@ -1,12 +1,15 @@
+const path = require('path')
+
 module.exports = {
-    entry: "./index.js",
+    context: path.resolve(__dirname),
+    entry: "./src",
     output: {
-        path: __dirname,
+        path: path.resolve(__dirname, "dist"),
         filename: "main.js"
     },
     module: {
         rules: [{
-            exclude: /node_modules/,
+            include: /src/,
             use: ["babel-loader"]
         }]
     }
