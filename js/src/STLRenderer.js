@@ -76,6 +76,10 @@ export class STLRenderer extends ModelRenderer {
         this.camera.updateProjectionMatrix()
     }
 
+    /**
+     * Moves the camera away from the mesh center, so that it fits into the
+     * camera frustum.
+     */
     autozoom() {
         if(this.mesh == null)
             return
