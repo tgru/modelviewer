@@ -77,6 +77,12 @@ export class STLRenderer extends ModelRenderer {
     }
 
     autozoom() {
+        if(this.mesh == null)
+            return
+
+        if(this.camera == null)
+            return
+
         let boundingBox = new THREE.Box3()
         boundingBox.setFromObject( this.mesh )
 
