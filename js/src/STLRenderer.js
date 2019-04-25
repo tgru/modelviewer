@@ -16,8 +16,12 @@ export class STLRenderer extends ModelRenderer {
     constructor(width, height) {
         super(width, height)
 
-        this.camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 10)
-        this.camera.position.z = 1
+        this.camera = new THREE.PerspectiveCamera(
+            70,
+            width / height,
+            0.01,
+            1000
+        )
 
         this.scene = new THREE.Scene()
 
@@ -40,9 +44,11 @@ export class STLRenderer extends ModelRenderer {
             console.log(geometry)
             let mat = new THREE.MeshNormalMaterial()
             this.mesh = new THREE.Mesh(geometry, mat)
+
             this.mesh.rotation.x = -0.5 * Math.PI
-            this.mesh.scale.set(0.01, 0.01, 0.01)
+
             this.scene.add(this.mesh)
+            this.autozoom()
             this.animate()
         })
     }
@@ -68,5 +74,31 @@ export class STLRenderer extends ModelRenderer {
         this.renderer.setSize(width, height)
         this.camera.aspect = width / height
         this.camera.updateProjectionMatrix()
+    }
+
+    autozoom() {
+        let boundingBox = new THREE.Box3()
+        boundingBox.setFromObject( this.mesh )
+
+        let boundingBoxSize = new THREE.Vector3()
+        boundingBox.getSize(boundingBoxSize)
+
+        let max = Math.max(
+           boundingBoxSize.x,
+           boundingBoxSize.y,
+           boundingBoxSize.z
+        )
+
+        let boundingBoxCenter = new THREE.Vector3()
+        boundingBox.getCenter(boundingBoxCenter)
+
+        let fov = this.camera.fov/180*Math.PI
+
+        let distance = (0.5*max) * (Math.cos(fov/2)) / (Math.sin(fov/2))
+        let position = new THREE.Vector3(distance, distance, distance)
+        position.add(boundingBoxCenter)
+
+        this.camera.position.set(position.x, position.y, position.z)
+        this.camera.lookAt(boundingBoxCenter)
     }
 }
