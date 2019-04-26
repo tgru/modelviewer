@@ -33,10 +33,10 @@ export class STLRenderer extends ModelRenderer {
         this.renderer.setSize(width, height)
         this.clock = new THREE.Clock(false)
 
-        this.controls = new OrbitControls( this.camera)
-        this.controls.target.set(0, 0, 0);
-
         this.canvas = this.renderer.domElement
+
+        this.controls = new OrbitControls( this.camera, this.canvas )
+        this.controls.target.set(0, 0, 0);
     }
 
     animate() {
