@@ -8,6 +8,11 @@ var modelViewer = {
     window: null,
     container: null,
     renderer: null,
+    resizeListener: function () {
+        let width = document.getElementById('modelviewer-container').clientWidth
+        let height = document.getElementById('modelviewer-container').clientHeight
+        modelViewer.renderer.resize(width, height)
+    },
     setup: function () {
         modelViewer.window = document.createElement('div')
         modelViewer.window.setAttribute('id', 'modelviewer-window')
@@ -52,6 +57,7 @@ var modelViewer = {
         modelViewer.renderer.load(path)
 
         modelViewer.setTitle(file)
+        window.addEventListener("resize", modelViewer.resizeListener)
     },
     hide: function () {
         if( !(document.body.contains(modelViewer.window) || document.body.contains(modelViewer.overlay)) )
@@ -61,6 +67,7 @@ var modelViewer = {
         modelViewer.renderer.destroy()
         document.body.removeChild(modelViewer.overlay)
         document.body.removeChild(modelViewer.window)
+        window.removeEventListener("resize", modelViewer.resizeListener)
     },
     setTitle(title) {
         document.getElementById('modelviewer-title').textContent = title
@@ -74,10 +81,4 @@ document.addEventListener("DOMContentLoaded", function () {
         OCA.Files.fileActions.register(modelViewer.mimeTypes[i], 'Show', OC.PERMISSION_READ, '', modelViewer.show)
         OCA.Files.fileActions.setDefault(modelViewer.mimeTypes[i], 'Show')
     }
-})
-
-window.addEventListener("resize", function () {
-    let width = document.getElementById('modelviewer-container').clientWidth
-    let height = document.getElementById('modelviewer-container').clientHeight
-    modelViewer.renderer.resize(width, height)
 })
