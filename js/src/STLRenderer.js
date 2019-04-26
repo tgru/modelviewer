@@ -1,5 +1,6 @@
 import {ModelRenderer} from './ModelRenderer'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import three_stl_loader from 'three-stl-loader'
 const STLLoader = three_stl_loader(THREE)
 
@@ -12,6 +13,9 @@ export class STLRenderer extends ModelRenderer {
     renderer = null
 
     mesh = null
+
+    controls = null
+    clock = null
 
     constructor(width, height) {
         super(width, height)
@@ -27,14 +31,18 @@ export class STLRenderer extends ModelRenderer {
 
         this.renderer = new THREE.WebGLRenderer( { antialias: true } )
         this.renderer.setSize(width, height)
+        this.clock = new THREE.Clock(false)
+
         this.canvas = this.renderer.domElement
+
+        this.controls = new OrbitControls( this.camera, this.canvas )
+        this.controls.target.set(0, 0, 0);
     }
 
     animate() {
+        var delta = this.clock.getDelta();
         this.id = requestAnimationFrame( this.animate.bind(this) )
-
-        this.mesh.rotation.z += 0.01
-
+        this.controls.update(delta)
         this.renderer.render( this.scene, this.camera )
     }
 
@@ -49,12 +57,17 @@ export class STLRenderer extends ModelRenderer {
 
             this.scene.add(this.mesh)
             this.autozoom()
+            this.clock.start()
             this.animate()
         })
     }
 
     destroy() {
         cancelAnimationFrame(this.id)
+        this.clock.stop()
+        this.clock = null
+        this.controls = null
+
         this.id = 0
 
         this.camera = null
