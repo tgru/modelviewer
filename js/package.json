@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jasmine",
+    "prebuild": "npm install",
     "build": "webpack"
   },
   "keywords": [],
