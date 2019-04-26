@@ -65,6 +65,7 @@ export class STLRenderer extends ModelRenderer {
     destroy() {
         cancelAnimationFrame(this.id)
         this.clock.stop()
+        this.clock = null
         this.controls = null
 
         this.id = 0
