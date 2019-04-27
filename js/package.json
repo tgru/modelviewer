@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jasmine",
+    "test": "babel-node spec/run.js",
     "prebuild": "npm install",
     "build": "webpack"
   },
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "three": "^0.103.0",
+    "three-orbitcontrols": "^2.102.1",
     "three-stl-loader": "^1.0.6"
   }
 }
