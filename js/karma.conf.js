@@ -13,6 +13,10 @@ module.exports = function(config) {
     webpack: require('./webpack.config.js'),
     webpackMiddleware: {
       // Any custom webpack-dev-middleware configuration...
+    },
+    reporters: ['coverage'],
+    coverageReporter: {
+      type: 'text-summary'
     }
   });
 };
