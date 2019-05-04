@@ -1,6 +1,7 @@
 module.exports = function(config) {
   config.set({
     frameworks: ['jasmine'],
+    browsers: ['ChromeHeadless'],
     files: [
       { pattern: 'spec/*Spec.js', watched: false },
       { pattern: 'spec/**/*Spec.js', watched: false }
