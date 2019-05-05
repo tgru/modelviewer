@@ -15,10 +15,4 @@
     <dependencies>
         <nextcloud min-version="14" max-version="14"/>
     </dependencies>
-    <navigations>
-        <navigation>
-            <name>Model Viewer</name>
-            <route>modelviewer.page.index</route>
-        </navigation>
-    </navigations>
 </info>
