@@ -1,4 +1,4 @@
-var STLRenderer = require('../STLRenderer')
+import {STLRenderer} from '../src/STLRenderer'
 
 describe("STLRenderer", function () {
     describe("constructor(width, height)", function () {
