@@ -21,7 +21,7 @@ module.exports = function (config) {
     webpackMiddleware: {
       // Any custom webpack-dev-middleware configuration...
     },
-    reporters: ['coverage'],
+    reporters: ['progress', 'coverage'],
     coverageReporter: {
       reporters: [{
           type: 'text-summary'
