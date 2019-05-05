@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "babel-node spec/run.js",
+    "test": "babel-node tests/run.js",
     "prebuild": "npm install",
     "build": "webpack"
   },

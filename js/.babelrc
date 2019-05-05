@@ -8,8 +8,8 @@
         }],
         ["istanbul", {
             "exclude": [
-                "spec/*Spec.js",
-                "spec/**/*Spec.js"
+                "tests/*Spec.js",
+                "tests/**/*Spec.js"
             ]
         }]
     ]
