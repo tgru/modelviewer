@@ -5,17 +5,17 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
     browsers: ['ChromeHeadless'],
     files: [{
-        pattern: 'tests/*Spec.js',
+        pattern: 'tests/*Test.js',
         watched: false
       },
       {
-        pattern: 'tests/**/*Spec.js',
+        pattern: 'tests/**/*Test.js',
         watched: false
       }
     ],
     preprocessors: {
-      'tests/*Spec.js': ['webpack'],
-      'tests/**/*Spec.js': ['webpack']
+      'tests/*Test.js': ['webpack'],
+      'tests/**/*Test.js': ['webpack']
     },
     webpack: require('./webpack.config.js'),
     webpackMiddleware: {
