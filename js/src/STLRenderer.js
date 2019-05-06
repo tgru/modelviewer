@@ -83,6 +83,12 @@ export class STLRenderer extends ModelRenderer {
     }
 
     resize(width, height) {
+        if(width == undefined)
+            throw new RangeError('Width is uninitialized')
+
+        if(height == undefined)
+            throw new RangeError('Height is uninitialized')
+
         if( width <= 0)
             throw new RangeError('Width must be greater then zero')
 
