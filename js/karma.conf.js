@@ -35,7 +35,7 @@ module.exports = function (config) {
           }(),
           subdir: '.',
           coverageType: 'statements',
-          range: [75, 90],
+          range: [50, 75],
           subject: 'Coverage',
           readmeFilename: 'README.md',
           readmeDir: path.resolve(__dirname, '..')
