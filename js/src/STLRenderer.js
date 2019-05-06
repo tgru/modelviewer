@@ -46,6 +46,12 @@ export class STLRenderer extends ModelRenderer {
     }
 
     load(path) {
+        if (!path)
+            throw new Error('path must set')
+
+        if (path === '')
+            throw new Error('path must be not empty')
+
         let loader = new STLLoader()
         loader.load(path, geometry => {
             console.log(geometry)
