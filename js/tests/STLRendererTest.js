@@ -107,9 +107,24 @@ describe("STLRenderer", function () {
             renderer = new STLRenderer(width, height)
         })
 
+        it("Should not accept null value", function () {
+            expect(function () {
+                let path = null
+                renderer.load(path)
+            }).toThrowError()
+        })
+
+        it("Should not accept uninitialized path", function () {
+            expect(function () {
+                let path
+                renderer.load(path)
+            }).toThrowError()
+        })
+
         it("Should not accept an empty path", function () {
             expect(function () {
-                renderer.load("")
+                let path = ""
+                renderer.load(path)
             }).toThrowError()
         })
     })
