@@ -1,6 +1,6 @@
 # Model Viewer
 
-![Coverage-shield-badge-1](https://img.shields.io/badge/Coverage-37.31%25-red.svg)
+![Coverage-shield-badge-1](https://img.shields.io/badge/Coverage-57.75%25-yellow.svg)
 
 An 3D model viewer for Nextcloud based on [three.js](https://threejs.org/).
 
