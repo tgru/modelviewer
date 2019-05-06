@@ -30,11 +30,10 @@ export class STLRenderer extends ModelRenderer {
         this.scene = new THREE.Scene()
 
         this.renderer = new THREE.WebGLRenderer( { antialias: true } )
-        this.renderer.setSize(width, height)
-        this.clock = new THREE.Clock(false)
-
+        this.resize(width, height)
         this.canvas = this.renderer.domElement
 
+        this.clock = new THREE.Clock(false)
         this.controls = new OrbitControls( this.camera, this.canvas )
         this.controls.target.set(0, 0, 0);
     }
@@ -84,6 +83,12 @@ export class STLRenderer extends ModelRenderer {
     }
 
     resize(width, height) {
+        if( width <= 0)
+            throw new RangeError('Width must be greater then zero')
+
+        if( height <= 0)
+            throw new RangeError('Height must be greater then zero')
+
         this.renderer.setSize(width, height)
         this.camera.aspect = width / height
         this.camera.updateProjectionMatrix()
