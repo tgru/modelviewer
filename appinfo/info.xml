@@ -5,7 +5,7 @@
     <name>Model Viewer</name>
     <summary>View your 3D models from within Nextcloud.</summary>
     <description><![CDATA[This app enables your Nextcloud instance to open and show 3D models from within the browser.]]></description>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <licence>agpl</licence>
     <author mail="21686590+tgru@users.noreply.github.com" homepage="https://github.com/tgru">tgru</author>
     <namespace>ModelViewer</namespace>
